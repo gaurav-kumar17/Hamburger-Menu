@@ -1,0 +1,107 @@
+*{
+    /* margin: 0;
+    padding: 0; */
+    box-sizing: border-box;
+}
+body{
+
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+/* state check karni aani chahiye */
+
+/* agar check box clicked hai then menu show karna hai */
+li{
+    list-style: none;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+.hamburger-menu{
+
+    /* border:1px solid red; */
+    /* width: 50%; */
+    position: relative;
+}
+.hamburger-menu input[type="checkbox"]{
+    display: block;
+    position: absolute;
+    top:15px;
+    left: 5px;
+    width: 35px;
+    height: 25px;
+    z-index: 1;
+    opacity: 0;
+}
+.menu-items{
+    padding-top: 90px;
+    transform: translateX(-110%);
+    transition: transform 0.2s ease-in-out;
+    
+    padding-left: 20px;
+    padding-bottom: 20px;
+    background:rgba(245, 245, 220, 0.414);
+    color: brown;
+    margin-top: -10px;
+    margin-left: -10px;
+    max-width: 400px;
+    width: 90%;
+}
+
+.hamburger-lines{
+    width:35px;
+    height: 25px;
+    /* background-color: red; */
+    position: absolute;
+    top:18px;
+    left: 7px;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+.hamburger-lines .line{
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: black;
+    border-radius: 10px;
+    
+}
+
+.hamburger-menu input[type="checkbox"]:checked ~ .menu-items{
+
+    /* display: block; */
+    transform: translateX(0%);
+    
+}
+.hamburger-menu input[type="checkbox"]:checked ~ .hamburger-lines .line{
+
+    background: black;
+    
+}
+
+.hamburger-lines .line1{
+
+    transform-origin: 0% 0%;
+}
+
+.hamburger-lines .line3{
+    
+    transform-origin: 0% 100%;
+}
+
+.hamburger-menu input[type="checkbox"]:checked ~ .hamburger-lines .line1{
+
+    transform: rotate(40deg);
+    transition: transform 0.2s ease-in-out;
+}
+.hamburger-menu input[type="checkbox"]:checked ~ .hamburger-lines .line2{
+
+    display: none;
+}
+.hamburger-menu input[type="checkbox"]:checked ~ .hamburger-lines .line3{
+
+    transform: rotate(-40deg);
+    transition: transform 0.2s ease-in-out;
+}
